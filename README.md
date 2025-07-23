@@ -7,6 +7,7 @@ This project implements a Retrieval-Augmented Generation (RAG) system for Bengal
 - Embedding and vector search with ChromaDB and SentenceTransformers
 - Local LLM querying via Ollama
 - Simple CLI for interactive Q&A
+- Light weight backend API for integration
 
 ## Requirements
 - Python 3.8+
@@ -17,7 +18,7 @@ This project implements a Retrieval-Augmented Generation (RAG) system for Bengal
 ## Python Dependencies
 Install required Python packages:
 ```bash
-pip install pdfplumber pytesseract pillow chromadb sentence-transformers ollama
+pip install pdfplumber pytesseract pillow chromadb sentence-transformers ollama fastapi
 ```
 
 ## Tesseract Setup

@@ -1,4 +1,4 @@
-# Bengali PDF RAG System
+# Multilingual PDF RAG System
 
 This project implements a Retrieval-Augmented Generation (RAG) system for Bengali PDFs using OCR, vector search, and a local LLM (Ollama). It extracts text from a PDF using Tesseract OCR, stores embeddings in ChromaDB, and answers user queries using an LLM with context retrieval.
 

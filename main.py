@@ -16,14 +16,25 @@ add_documents(collection, doc_texts)
 
 # 3. Simple CLI loop for user queries
 print("\nRAG system ready. Type your question (or 'exit' to quit):")
+conversation_history = []
 while True:
     user_query = input("\nYour question: ").strip()
     if user_query.lower() in ("exit", "quit"): break
     # 4. Retrieve relevant context
     results = query_collection(collection, user_query, top_k=3)
     context = "\n\n".join(results['documents'][0]) if results['documents'] else ""
+    # Build conversation context
+    conversation_context = ""
+    if conversation_history:
+        for turn in conversation_history:
+            conversation_context += f"User: {turn['question']}\nAssistant: {turn['answer']}\n"
+    # Add current context from retrieval
+    if context:
+        conversation_context += f"\nRelevant context:\n{context}\n"
     # 5. Query LLM
     print("\nQuerying LLM...")
-    answer = ask_llm(user_query, context=context)
+    answer = ask_llm(user_query, context=conversation_context)
     # 6. Print answer
-    print(f"\nAnswer:\n{answer}") 
+    print(f"\nAnswer:\n{answer}")
+    # 7. Append to conversation history
+    conversation_history.append({"question": user_query, "answer": answer}) 

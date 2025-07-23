@@ -51,6 +51,14 @@ pip install pdfplumber pytesseract pillow chromadb sentence-transformers ollama
 ## Notes
 - Make sure both Tesseract and Ollama are running and accessible from your system.
 
-
-
+## Demo Input-Output
  ![Sample Output](demo.png)
+
+
+## QnA
+
+- What method or library did you use to extract the text, and why? Did you face any formatting challenges with the PDF content?
+
+Ans: First I tried to extract the text using pymupdf. But upon doing so I noticed that the bengali characters were broken. So instead of directly extracting the text with a pdf reader library, I used OCR (Optical Character Recognition). I have used the Pytesseract module for OCR. 
+
+- 

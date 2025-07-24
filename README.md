@@ -48,6 +48,7 @@ pip install pdfplumber pytesseract pillow chromadb sentence-transformers ollama 
 - `vector_module.py` - Handles embedding, vector storage, and retrieval with ChromaDB.
 - `llm_module.py` - Sends queries to the local LLM via Ollama.
 - `tenms.pdf` - Example PDF (replace with your own as needed).
+- `rag_api.py` - Lightweight REST API.
 
 ## Notes
 - Make sure both Tesseract and Ollama are running and accessible from your system.
